@@ -1,8 +1,5 @@
 package com.gym.service.implementation;
 
-import javax.validation.ConstraintViolationException;
-
-import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +15,7 @@ public class RegisterServiceImplementation implements RegisterService {
 	
 	@Override
 	public Integer createCustomer(Customer customer) {
+		customer.setIsAdmin("no");
 		customerRepo.save(customer);
 		return customer.getId();
 	}

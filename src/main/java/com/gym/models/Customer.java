@@ -42,10 +42,13 @@ public class Customer {
 	@Column(nullable = true)
 	private String paymentStatus;
 	
+	@Column(nullable = false)
+	private String isAdmin;
+	
 	public Customer() {}
 
 	public Customer(int id, String email, String password, String firstName, String lastName, String dob,
-			String address, String phone, String subscription, String paymentStatus) {
+			String address, String phone, String subscription, String paymentStatus, String isAdmin) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -57,6 +60,7 @@ public class Customer {
 		this.phone = phone;
 		this.subscription = subscription;
 		this.paymentStatus = paymentStatus;
+		this.isAdmin = isAdmin;
 	}
 
 	public int getId() {
@@ -137,6 +141,14 @@ public class Customer {
 
 	public void setPaymentStatus(String paymentStatus) {
 		this.paymentStatus = paymentStatus;
+	}
+
+	public String getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 	
 }
