@@ -15,17 +15,19 @@ public class LoginServiceImplementation implements LoginService {
 	@Override
 	public String[] loginvalidate(String email, String password) {
 		Customer customer = customerRepo.fetchCustomerByEmail(email);
-		String[] reply = null;
+		String[] reply = new String[3];
 		if (customer != null) {
 			if (customer.getPassword().equals(password)) {
-				
+				reply[0] = "success";
+				reply[1] = customer.getFirstName();
+				reply[2] = customer.getIsAdmin();
 				return reply;
 			} else {
-				
+				reply[0] = "wrongPassword";
 				return reply;
 			}
 		} else {
-			
+			reply[0] = "invalidEmail";
 			return reply;
 		}
 	}
