@@ -15,6 +15,7 @@ import com.gym.service.UpdateSubscriptionService;
 @RestController
 @RequestMapping("/gym")
 @CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "https://857a-59-91-88-30.ngrok.io")
 public class UpdateSubscriptionRestController {
 
 	@Autowired
